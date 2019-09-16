@@ -5,6 +5,18 @@ class Olympian < ApplicationRecord
   has_many :olympics, through: :results
   has_many :events, through: :results
 
+  def self.average_age
+    self.average(:age).round(1)
+  end
+
+  def self.average_female_weight
+    where(sex: 'F').average(:weight)
+  end
+
+  def self.average_male_weight
+    where(sex: 'M').average(:weight)
+  end
+
   def self.request_age(request)
     case request
     when 'youngest'
@@ -12,6 +24,10 @@ class Olympian < ApplicationRecord
     when 'oldest'
       order('age DESC').take
     end
+  end
+
+  def self.total_count
+    count(:id)
   end
 
   def sport
