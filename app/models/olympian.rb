@@ -6,7 +6,7 @@ class Olympian < ApplicationRecord
   has_many :events, through: :results
 
   def self.average_age
-    self.average(:age).round(1)
+    self.average(:age)
   end
 
   def self.average_female_weight

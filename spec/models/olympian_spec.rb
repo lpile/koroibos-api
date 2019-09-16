@@ -34,7 +34,7 @@ RSpec.describe Olympian, type: :model do
 
   describe 'class methods' do
     it 'average_age' do
-      expect(Olympian.average_age).to eq(29.7)
+      expect(Olympian.average_age.round(1)).to eq(29.7)
     end
 
     it 'average_female_weight' do
