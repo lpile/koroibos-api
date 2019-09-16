@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  validates :name, uniqueness: true, presence: true
+  validates :name, presence: true
 
   belongs_to :sport
   has_many :results
