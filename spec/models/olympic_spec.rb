@@ -5,8 +5,9 @@ RSpec.describe Olympic, type: :model do
     it { should validate_presence_of(:games) }
     it { should validate_uniqueness_of(:games) }
   end
-  
+
   describe 'associations' do
     it { should have_many(:results) }
+    it { should have_many(:events).through(:results) }
   end
 end
