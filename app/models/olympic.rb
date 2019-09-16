@@ -1,5 +1,5 @@
 class Olympic < ApplicationRecord
-  validates :games, uniqueness: true, presence: true
+  validates :games, presence: true
 
   has_many :results
   has_many :events, through: :results

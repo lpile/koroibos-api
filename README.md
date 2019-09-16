@@ -1,24 +1,22 @@
-# README
+Local Installation
+==================
+Requirements
+------------
+* [Ruby 2.4.1](https://www.ruby-lang.org/en/downloads/) - Ruby Version
+* [Rails 5.2.3](https://rubyonrails.org/) - Rails Version
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Clone
+-----
+```
+$ git clone https://github.com/lpile/koroibos-api.git
+$ cd koroibos-api
+$ bundle install
+```
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Setup Database
+--------------
+```
+$ rails db:{create,migrate}
+$ rake import:data
+```
+**Note: The rake task will take awhile to load data into database**
