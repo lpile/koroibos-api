@@ -5,6 +5,15 @@ class Olympian < ApplicationRecord
   has_many :olympics, through: :results
   has_many :events, through: :results
 
+  def self.request_age(request)
+    case request
+    when 'youngest'
+      order('age ASC').take
+    when 'oldest'
+      order('age DESC').take
+    end
+  end
+
   def sport
     sport_id = self.events.first.sport_id
     Sport.find_by(id: sport_id).name
