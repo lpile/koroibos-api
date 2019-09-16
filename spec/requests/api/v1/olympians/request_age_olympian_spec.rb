@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'csv'
 
-describe 'Youngest Olympian', type: :request do
+describe 'Age Request Olympian', type: :request do
 
   before :all do
     CSV.foreach('./spec/data/sample_olympic_data_2016.csv', headers: true, header_converters: :symbol) do |row|
