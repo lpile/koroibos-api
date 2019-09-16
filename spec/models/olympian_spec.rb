@@ -13,5 +13,7 @@ RSpec.describe Olympian, type: :model do
 
   describe 'associations' do
     it { should have_many(:results) }
+    it { should have_many(:olympics).through(:results) }
+    it { should have_many(:events).through(:results) }
   end
 end
