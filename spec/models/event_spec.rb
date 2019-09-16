@@ -8,5 +8,6 @@ RSpec.describe Event, type: :model do
 
   describe 'associations' do
     it { should belong_to(:sport) }
+    it { should have_many(:results) }
   end
 end
