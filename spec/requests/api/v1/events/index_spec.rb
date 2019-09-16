@@ -21,7 +21,7 @@ describe 'Events Index', type: :request do
     expect(response).to have_http_status(:successful)
 
     result = JSON.parse(response.body)
-    require "pry"; binding.pry
+
     # Check response correct format
     expect(result).to have_key('events')
     expect(result['events'].class).to be(Array)
