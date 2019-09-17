@@ -32,8 +32,8 @@ describe 'Olympians Index', type: :request do
     expect(result['olympian_stats']['average_weight']).to have_key('female_olympians')
     # Check response correct values
     expect(result['olympian_stats']['total_competing_olympians']).to eq(Olympian.total_count)
-    expect(result['olympian_stats']['average_weight']['male_olympians']).to eq(Olympian.average_male_weight.round(1))
-    expect(result['olympian_stats']['average_weight']['female_olympians']).to eq(Olympian.average_female_weight.round(1))
-    expect(result['olympian_stats']['average_age']).to eq(Olympian.average_age.round(1))
+    expect(result['olympian_stats']['average_weight']['male_olympians']).to eq(Olympian.average_male_weight.to_f.round(1))
+    expect(result['olympian_stats']['average_weight']['female_olympians']).to eq(Olympian.average_female_weight.to_f.round(1))
+    expect(result['olympian_stats']['average_age']).to eq(Olympian.average_age.to_f.round(1))
   end
 end
