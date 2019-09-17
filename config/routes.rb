@@ -8,4 +8,6 @@ Rails.application.routes.draw do
       resources :olympians, only: [:index]
     end
   end
+
+  get '*other', to: redirect('/')
 end
