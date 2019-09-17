@@ -25,17 +25,17 @@ describe 'Age Request Olympian', type: :request do
     olympian = Olympian.request_age('youngest')
 
     # Check response correct format
-    expect(result).to have_key('name')
-    expect(result).to have_key('team')
-    expect(result).to have_key('age')
-    expect(result).to have_key('sport')
-    expect(result).to have_key('total_medals_won')
+    expect(result.first).to have_key('name')
+    expect(result.first).to have_key('team')
+    expect(result.first).to have_key('age')
+    expect(result.first).to have_key('sport')
+    expect(result.first).to have_key('total_medals_won')
     # Check response correct values
-    expect(result['name']).to eq(olympian.name)
-    expect(result['team']).to eq(olympian.team)
-    expect(result['age']).to eq(olympian.age)
-    expect(result['sport']).to eq(olympian.sport)
-    expect(result['total_medals_won']).to eq(olympian.total_medals_won)
+    expect(result.first['name']).to eq(olympian.name)
+    expect(result.first['team']).to eq(olympian.team)
+    expect(result.first['age']).to eq(olympian.age)
+    expect(result.first['sport']).to eq(olympian.sport)
+    expect(result.first['total_medals_won']).to eq(olympian.total_medals_won)
   end
 
   it 'returns json information of the oldest olympian' do
@@ -48,16 +48,16 @@ describe 'Age Request Olympian', type: :request do
     olympian = Olympian.request_age('oldest')
 
     # Check response correct format
-    expect(result).to have_key('name')
-    expect(result).to have_key('team')
-    expect(result).to have_key('age')
-    expect(result).to have_key('sport')
-    expect(result).to have_key('total_medals_won')
+    expect(result.first).to have_key('name')
+    expect(result.first).to have_key('team')
+    expect(result.first).to have_key('age')
+    expect(result.first).to have_key('sport')
+    expect(result.first).to have_key('total_medals_won')
     # Check response correct values
-    expect(result['name']).to eq(olympian.name)
-    expect(result['team']).to eq(olympian.team)
-    expect(result['age']).to eq(olympian.age)
-    expect(result['sport']).to eq(olympian.sport)
-    expect(result['total_medals_won']).to eq(olympian.total_medals_won)
+    expect(result.first['name']).to eq(olympian.name)
+    expect(result.first['team']).to eq(olympian.team)
+    expect(result.first['age']).to eq(olympian.age)
+    expect(result.first['sport']).to eq(olympian.sport)
+    expect(result.first['total_medals_won']).to eq(olympian.total_medals_won)
   end
 end
